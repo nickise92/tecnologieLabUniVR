@@ -3,3 +3,4 @@
 *.gz
 *.fdb_latexmk
 *.toc
+*.out
