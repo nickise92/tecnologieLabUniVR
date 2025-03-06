@@ -1,0 +1,91 @@
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{geometry}
+\geometry{
+	a4paper, 
+	left=20mm,
+	right=20mm,
+	top=20mm,
+	bottom=20mm
+}
+\usepackage{hyperref}
+
+
+% Template
+\usepackage{noteTemplate}
+\usepackage{titlepage}
+
+\begin{document}
+\customtitlepage
+\newpage
+\tableofcontents
+
+\chapter{PostgreSQL}
+
+\section{Introduzione}
+
+PostgreSQL è un RDBMS con alcune funzionalità orientate agli oggetti. E' multipiattaforma, opensource e gestito da un gruppo di volontari. La documentazione si pu\`o trovare sul sito ufficiale di \url{http://www.postgresql.org}.
+PostgreSQL implementa gran parte dello standard SQL: la versione 16 implementa quasi tutte le funzioni SQL 2023, per approfondire si rimanda alla \href{https://www.postgresql.org/docs/16/features.html}{documentazione}.
+
+L'interazione tra un utente e le basi di dati gestite da PostgreSQL avviene secondo il modello \emph{client-server}.
+
+\subsection{Server} 
+Il daemon postmaster supervisiona tutti i processi specifici di PostgreSQL.
+\subsection{Client(s)} 
+Qualsiasi programma in grado di gestire l'interazione con postmaster (input di comandi, invio al postmaster, visualizzazione esito comando, ecc).
+Il client standard \`e \textbf{psql}, un'applicazione a linea di comando. Esiste un'alternativa interessante: \href{http://www.pgadmin.org}{\textbf{pgAdmin IV}}, un client grafico pi\`u intuitivo.
+
+\subsection{Esempio di connessione al server tramite psql}
+\begin{lstlisting}
+psql -h db-srv.di.univr.it -U <userid> <nomeid>
+Inserisci la password per l`utente <userid>
+psql(16.0)
+connessione SSL (protocollo: TLSv1.2, cifrario ECDHE-RSA-AES256-GCM-SHA384, 
+bit: 256, compressione: disattivato)
+
+Digita 'help' per avere un aiuto
+<usrid> =>
+\end{lstlisting}
+
+\section{Sintassi SQL}
+\subsection{Notazione}
+\begin{itemize}
+\item \textbf{[} e \textbf{]} indicano parti opzionali, il termine pu\`o non comparire o comparire una sola volta;
+\item \textbf{\{} e \textbf{\}} indicano che il termine pu\`o non comparire o comparire un numero arbitrario di volte;
+\item L'istruzione \texttt{CREATE TABLE} definisce uno schema di relazione e ne crea un'istanza vuota: attributi, domini e vincoli.
+
+\end{itemize}
+
+\subsection{Creazione di una tabella}
+
+\begin{lstlisting}{language=SQL}
+CREATE TABLE tabella {
+	attributo dominio [ valoreDefault ] { vincolo }
+	{, attributo dominio [valoreDefault } { vincolo } }
+	{, vincoloTabella }
+]);
+\end{lstlisting}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
