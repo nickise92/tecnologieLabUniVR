@@ -33,12 +33,12 @@
 
 % setting language SQL
 \lstdefinelanguage{SQL}{
-	morekeywords = [1]{BEGIN, END, TRANSACTION, UPDATE, SET, WHERE, COMMIT, WORK, CREATE, TABLE, DELETE, ALTER, FROM, DROP, ADD, COLUMN, REFERENCES, FOREIGN, KEY, UNIQUE, VARYING, PRIMARY, KEY, AS, VALUE, CHECK, NOT, WITH, DOMAIN, DEFAULT},
+	morekeywords = [1]{BEGIN, END, TRANSACTION, UPDATE, SET, WHERE, COMMIT, WORK, CREATE, TABLE, DELETE, ALTER, FROM, DROP, ADD, COLUMN, REFERENCES, FOREIGN, KEY, UNIQUE, VARYING, PRIMARY, KEY, AS, VALUE, CHECK, NOT, WITH, DOMAIN, DEFAULT, INTERVAL, TO},
 	morekeywords = [2]{NULL, CHARACTER, TEXT, BOOLEAN, SMALLINT, INTEGER, NUMERIC, DECIMAL, REAL, DOUBLE, PRECISION, DATE, TIME, TIMESTAMP, VARCHAR, CHAR}, 
 	keywordstyle = [1]\color{keywordcolor},
 	keywordstyle = [2]\color{typecolor},
 	sensitive = false, 
-	morecomment = [l]{//},
+	morecomment = [l]{--},
 	commentstyle = \color{codecomment},
 	morestring = [b]',
 	stringstyle = \color{codestring}
@@ -54,6 +54,7 @@
 	keywordstyle={\color{keywordcolor}\sffamily\bfseries\normalsize},
 	ndkeywordstyle={\color{typecolor}\normalsize\sffamily},
 	stringstyle={\color{codestring}\normalsize\ttfamily},
+	numberstyle={\color{codecomment}\tiny\ttfamily},
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
